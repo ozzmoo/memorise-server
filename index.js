@@ -3,9 +3,10 @@ const app = express()
 const Datastore = require('nedb')
 const cors = require('cors')
 
+const port = process.env.PORT || 3000
 
 app.use(cors())
-app.listen(3000, () => { console.log("listen 3000 port") })
+app.listen(port, () => { console.log("listen 3000 port") })
 app.use(express.static('public'))
 app.use(express.json({ limit: "1mb" }))
 
